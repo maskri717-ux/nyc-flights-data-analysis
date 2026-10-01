@@ -1,0 +1,1263 @@
+:root {
+  --navy: #10283f;
+  --navy-deep: #0b1d2e;
+  --teal: #187d8d;
+  --teal-light: #dff2f3;
+  --sky: #5b9fc0;
+  --amber: #c98a2e;
+  --charcoal: #263746;
+  --slate: #617181;
+  --muted: #8794a1;
+  --offwhite: #f5f8fa;
+  --white: #ffffff;
+  --border: #dbe4e9;
+  --border-strong: #c7d5dc;
+  --shadow: 0 10px 28px rgba(16, 40, 63, 0.07);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--offwhite);
+  color: var(--charcoal);
+  font-family: Aptos, "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+#quarto-content {
+  padding-top: 1rem;
+}
+
+.content {
+  max-width: 1040px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--navy);
+  font-weight: 750;
+  letter-spacing: -0.018em;
+  line-height: 1.2;
+}
+
+h1 {
+  border-top: 1px solid var(--border-strong);
+  font-size: clamp(1.85rem, 3vw, 2.45rem);
+  margin: 4.25rem 0 1.15rem;
+  padding-top: 0.95rem;
+}
+
+h2 {
+  border-left: 3px solid var(--teal);
+  font-size: clamp(1.35rem, 2vw, 1.7rem);
+  margin: 3.15rem 0 1rem;
+  padding-left: 0.85rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+h2 + p,
+h3 + p {
+  margin-top: 0.6rem;
+}
+
+p, ul, ol {
+  max-width: 78ch;
+}
+
+li::marker {
+  color: var(--teal);
+  font-weight: 700;
+}
+
+a {
+  color: var(--teal);
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--navy);
+}
+
+strong {
+  color: var(--navy);
+}
+
+/* Keep Quarto's generated title hidden because the portfolio hero is the title. */
+#title-block-header {
+  display: none;
+}
+
+/* ===== Table of contents ===== */
+
+#TOC {
+  border-left: 1px solid var(--border-strong);
+  padding-left: 1rem;
+}
+
+#TOC .nav-link {
+  color: var(--slate);
+  font-size: 0.86rem;
+  line-height: 1.35;
+  padding: 0.28rem 0.55rem;
+  text-decoration: none;
+}
+
+#TOC .nav-link:hover,
+#TOC .nav-link.active {
+  background: var(--teal-light);
+  border-radius: 5px;
+  color: var(--navy);
+  font-weight: 650;
+}
+
+/* ===== Portfolio hero ===== */
+
+.portfolio-hero {
+  background: var(--navy-deep);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(11, 29, 46, 0.09);
+  color: var(--white);
+  margin: 1rem 0 2.4rem;
+  overflow-wrap: anywhere;
+  overflow: hidden;
+  padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
+  position: relative;
+}
+
+.portfolio-hero::after {
+  border: 1px solid rgba(223, 242, 243, 0.12);
+  border-radius: 50%;
+  content: "";
+  height: 240px;
+  pointer-events: none;
+  position: absolute;
+  right: -70px;
+  top: -90px;
+  width: 240px;
+}
+
+.hero-eyebrow {
+  color: var(--teal-light);
+  font-size: 0.73rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.hero-title {
+  color: var(--white);
+  font-size: clamp(2rem, 4.2vw, 3.25rem);
+  font-weight: 750;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+  text-wrap: balance;
+  margin-bottom: 1.25rem;
+  max-width: 20ch;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-subtitle {
+  color: var(--teal-light);
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+  max-width: 60ch;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-author {
+  border-left: 2px solid var(--amber);
+  padding-left: 0.9rem;
+  color: var(--teal-light);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+.portfolio-hero p {
+  margin: 0;
+}
+
+.hero-author strong {
+  color: var(--white);
+  font-size: 1rem;
+}
+
+/* ===== KPI summary cards ===== */
+
+.kpi-grid {
+  display: grid;
+  gap: clamp(0.75rem, 1.5vw, 1rem);
+  align-items: stretch;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: -1.45rem 0 3.6rem;
+  min-width: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.kpi-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(16, 40, 63, 0.055);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  min-height: 148px;
+  padding: 1.35rem clamp(0.9rem, 1.5vw, 1.2rem) 1.25rem;
+}
+
+.kpi-card:first-child {
+  border-top: 3px solid var(--amber);
+}
+
+.kpi-card:not(:first-child) {
+  border-top: 3px solid var(--teal);
+}
+
+.kpi-value {
+  color: var(--teal);
+  font-size: clamp(1.8rem, 2.5vw, 2.1rem);
+  font-variant-numeric: lining-nums tabular-nums;
+  font-weight: 750;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+  margin-bottom: 0.65rem;
+}
+
+.kpi-label {
+  color: var(--slate);
+  font-size: 0.86rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+
+/* ===== Narrative landmarks ===== */
+
+#project-question > p {
+  background: var(--white);
+  border-left: 4px solid var(--teal);
+  border-radius: 0 12px 12px 0;
+  box-shadow: var(--shadow);
+  color: var(--navy);
+  font-size: 1.13rem;
+  font-weight: 600;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  max-width: 86ch;
+  padding: 1.35rem 1.5rem;
+}
+
+#introduction > p {
+  border-left: 3px solid var(--sky);
+  color: var(--slate);
+  font-size: 1.08rem;
+  margin-bottom: 2.3rem;
+  max-width: 72ch;
+  padding-left: 1rem;
+}
+
+#project-question {
+  margin-top: 2.5rem;
+}
+
+#project-question > p {
+  border: 1px solid var(--border-strong);
+  border-left: 4px solid var(--teal);
+  box-shadow: 0 8px 24px rgba(16, 40, 63, 0.06);
+  margin-bottom: 1.15rem;
+  padding: 1.45rem 1.6rem;
+}
+
+#project-question > p:first-of-type::before {
+  color: var(--teal);
+  content: "RESEARCH QUESTION";
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.13em;
+  margin-bottom: 0.65rem;
+}
+
+#project-question > p + p {
+  border-left: 2px solid var(--border-strong);
+  color: var(--slate);
+  margin-bottom: 2.7rem;
+  padding-left: 1rem;
+}
+
+#data-sources > p {
+  color: var(--slate);
+  margin-bottom: 1rem;
+}
+
+#data-sources > p + ul {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, max(18rem, calc(50% - 0.5rem))), 1fr));
+  grid-auto-rows: 1fr;
+  list-style: none;
+  margin: 0 0 1.5rem;
+  max-width: 92ch;
+  padding: 0;
+}
+
+#data-sources > p + ul li {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(16, 40, 63, 0.045);
+  color: var(--slate);
+  font-size: 0.94rem;
+  line-height: 1.65;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  padding: clamp(1.15rem, 2vw, 1.5rem);
+}
+
+#data-sources .dataset-category {
+  color: var(--teal);
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  margin-bottom: 0.65rem;
+}
+
+#data-sources .dataset-name {
+  color: var(--navy);
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.8rem;
+}
+
+#data-sources .dataset-name code {
+  background: transparent;
+  color: inherit;
+  font-size: inherit;
+  padding: 0;
+}
+
+#data-sources > p + ul + p {
+  border-left: 2px solid var(--amber);
+  color: var(--slate);
+  font-size: 0.94rem;
+  line-height: 1.65;
+  margin-bottom: 2.7rem;
+  padding: 0.25rem 0 0.25rem 1rem;
+}
+
+#setup > .cell {
+  background: rgba(232, 241, 243, 0.35);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  margin-bottom: 0.75rem;
+  padding: 0.25rem 0.85rem;
+}
+
+#setup > .cell + p {
+  color: var(--slate);
+  font-size: 0.94rem;
+  margin-bottom: 2.7rem;
+}
+
+/* ===== Airline Performance story flow ===== */
+
+#airline-performance > p:first-of-type {
+  color: var(--slate);
+  margin-bottom: 2.4rem;
+  max-width: 80ch;
+}
+
+#airline-names-and-valid-delay-samples > h2 {
+  color: var(--slate);
+  font-size: 1.1rem;
+  margin-top: 1.8rem;
+}
+
+#airline-names-and-valid-delay-samples .cell-output-display {
+  background: #fbfcfd;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border-strong);
+  border-radius: 8px;
+  box-shadow: none;
+  font-size: 0.82rem;
+  margin: 0.75rem 0 1.15rem;
+  padding: 0.25rem 0.65rem 0.5rem;
+}
+
+#airline-names-and-valid-delay-samples .cell-output-display table {
+  box-shadow: none;
+  margin-bottom: 0.35rem;
+}
+
+#airline-names-and-valid-delay-samples > p {
+  border-left: 2px solid var(--sky);
+  color: var(--slate);
+  font-size: 0.94rem;
+  margin-bottom: 2.8rem;
+  max-width: 82ch;
+  padding-left: 1rem;
+}
+
+#airline-names-and-valid-delay-samples > p strong {
+  color: var(--navy);
+}
+
+#compare-15-minute-departure-delay-shares {
+  border-top: 1px solid var(--border-strong);
+  margin-top: 1.2rem;
+  padding-top: 0.25rem;
+}
+
+#compare-15-minute-departure-delay-shares > h2 {
+  font-size: clamp(1.45rem, 2.2vw, 1.8rem);
+  margin-top: 2.4rem;
+}
+
+#compare-15-minute-departure-delay-shares > .cell {
+  margin: 0.85rem 0 0.65rem;
+}
+
+#compare-15-minute-departure-delay-shares > .cell-output-display,
+#compare-15-minute-departure-delay-shares .cell-output-display:has(img) {
+  background: var(--white);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  box-shadow: 0 9px 25px rgba(16, 40, 63, 0.08);
+  margin: 0.85rem 0 0.5rem;
+  padding: 0.7rem;
+}
+
+#compare-15-minute-departure-delay-shares > p {
+  border-left: 3px solid var(--teal-light);
+  color: var(--slate);
+  margin: 1.1rem 0 0;
+  max-width: 84ch;
+  padding-left: 1rem;
+}
+
+#compare-15-minute-departure-delay-shares > p strong {
+  color: var(--navy);
+}
+
+#compare-15-minute-departure-delay-shares > .cell > details > summary {
+  font-size: 0.72rem;
+  opacity: 0.85;
+}
+
+#airport-performance > .cell:has(.cell-output-display img) ~ p {
+  border-left: 3px solid var(--teal);
+  color: var(--slate);
+  margin: 1rem 0;
+  max-width: 84ch;
+  padding-left: 1rem;
+}
+
+#airport-performance > .cell:has(.cell-output-display img) ~ p strong {
+  color: var(--navy);
+}
+
+#temporal-patterns > .cell:has(.cell-output-display img) + p,
+#temporal-patterns > .cell:has(.cell-output-display img) + p + p {
+  border-left: 3px solid var(--teal);
+  color: var(--slate);
+  margin: 1rem 0;
+  max-width: 84ch;
+  padding-left: 1rem;
+}
+
+#temporal-patterns > .cell:has(.cell-output-display img) + p strong,
+#temporal-patterns > .cell:has(.cell-output-display img) + p + p strong {
+  color: var(--navy);
+}
+
+#routes-destinations > .cell:has(img[src*="destination-delay-comparison"]) + p {
+  border-left: 3px solid var(--teal);
+  color: var(--slate);
+  padding-left: 1rem;
+}
+
+#routes-destinations > .cell:has(img[src*="destination-delay-comparison"]) + p strong {
+  color: var(--navy);
+}
+
+#key-findings-conclusions + h3 {
+  color: var(--teal);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+#key-findings-conclusions ~ h3 {
+  margin-top: 3.2rem;
+}
+
+#key-findings-conclusions ~ h3:first-of-type + ul {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 1.35rem 1.7rem 1.35rem 2.6rem;
+}
+
+#key-findings-conclusions ~ h3:nth-of-type(2) + p {
+  border-left: 3px solid var(--sky);
+  color: var(--slate);
+  padding-left: 1.25rem;
+}
+
+#key-findings-conclusions ~ h3:nth-of-type(3) + ul {
+  color: var(--slate);
+  font-size: 0.95rem;
+  padding-left: 1.35rem;
+}
+
+#key-findings-conclusions ~ h3:nth-of-type(4) {
+  background: var(--navy);
+  border: 0;
+  border-radius: 12px 12px 0 0;
+  color: var(--white);
+  margin-bottom: 0;
+  padding: 1.5rem 1.6rem 0.4rem;
+}
+
+#key-findings-conclusions ~ h3:nth-of-type(4) + p {
+  background: var(--navy);
+  border-radius: 0 0 12px 12px;
+  color: #dbe8ed;
+  margin-bottom: 3rem;
+  max-width: none;
+  padding: 0.35rem 1.6rem 1.6rem;
+}
+
+/* ===== Closing case-study treatment ===== */
+
+#key-findings > h3,
+#analytical-takeaways > h3,
+#limitations > h3,
+#conclusion > h3 {
+  color: var(--teal);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  margin: 2.25rem 0 1rem;
+  text-transform: uppercase;
+}
+
+#key-findings > ul {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  margin: 0 0 3rem;
+  max-width: none;
+  padding: 0;
+}
+
+#key-findings > ul > li {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--teal);
+  border-radius: 9px;
+  box-shadow: 0 5px 16px rgba(16, 40, 63, 0.045);
+  color: var(--slate);
+  font-size: 0.94rem;
+  line-height: 1.58;
+  padding: 1.05rem 1.15rem;
+}
+
+#key-findings > ul > li:first-child {
+  border-top: 3px solid var(--amber);
+  grid-column: 1 / -1;
+}
+
+#key-findings > ul > li > p {
+  margin: 0;
+  max-width: none;
+}
+
+#key-findings > ul > li strong {
+  color: var(--navy);
+}
+
+#analytical-takeaways {
+  background: #eef5f7;
+  border-left: 3px solid var(--sky);
+  border-radius: 0 10px 10px 0;
+  margin-bottom: 3rem;
+  padding: 0.1rem 1.5rem 1rem;
+}
+
+#analytical-takeaways > h3 {
+  margin-top: 1.25rem;
+}
+
+#analytical-takeaways > p {
+  color: var(--slate);
+  max-width: 84ch;
+}
+
+#limitations {
+  margin-bottom: 3rem;
+}
+
+#limitations > ul {
+  display: grid;
+  gap: 0.65rem 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  max-width: none;
+  padding: 0;
+}
+
+#limitations > ul > li {
+  border-top: 1px solid var(--border-strong);
+  color: var(--slate);
+  font-size: 0.91rem;
+  line-height: 1.55;
+  padding: 0.75rem 0.2rem 0.2rem 0;
+}
+
+#limitations > ul > li strong {
+  color: var(--navy);
+}
+
+#limitations > ul > li:last-child {
+  grid-column: 1 / -1;
+}
+
+#conclusion {
+  background: var(--navy);
+  border-radius: 12px;
+  box-shadow: 0 10px 26px rgba(16, 40, 63, 0.12);
+  margin-bottom: 3rem;
+  overflow: hidden;
+  padding: 0.1rem 1.6rem 1.5rem;
+  position: relative;
+}
+
+#conclusion::before {
+  background: var(--teal);
+  content: "";
+  height: 3px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#conclusion > h3 {
+  color: #a8dce0;
+  margin-top: 1.45rem;
+}
+
+#conclusion > p {
+  color: #dbe8ed;
+  margin-bottom: 0;
+  max-width: 84ch;
+}
+
+/* ===== Data Quality & Preparation story flow ===== */
+
+#data-quality-preparation > h1 {
+  margin-bottom: 2.2rem;
+}
+
+#data-quality-preparation > section > h2 {
+  color: var(--navy);
+  font-size: 1.3rem;
+  margin-top: 2.4rem;
+}
+
+#data-quality-preparation > section > .cell {
+  margin: 0.8rem 0 0.9rem;
+}
+
+#data-quality-preparation .cell > details {
+  margin-bottom: 0.5rem;
+}
+
+#data-quality-preparation .cell-output-stdout {
+  background: #f8fbfc;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border-strong);
+  border-radius: 8px;
+  color: var(--slate);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  margin: 0.65rem 0 0.9rem;
+  max-height: 15rem;
+  overflow: auto;
+  padding: 0.7rem 0.85rem;
+}
+
+#inspect-the-flight-records > .cell > .cell-output-stdout:first-of-type {
+  display: none;
+}
+
+#summarize-missing-values > .cell .cell-output-stdout {
+  display: none;
+}
+
+#summarize-missing-values .missing-summary-table {
+  margin: 0.75rem 0 1.6rem;
+  max-width: 760px;
+}
+
+#summarize-missing-values .missing-summary-table table {
+  font-size: 0.88rem;
+  margin: 0;
+  min-width: 0;
+}
+
+#summarize-missing-values .missing-summary-table th,
+#summarize-missing-values .missing-summary-table td {
+  padding: 0.62rem 0.8rem;
+}
+
+#distinguish-recorded-outcomes > .cell .cell-output-stdout {
+  display: none;
+}
+
+#distinguish-recorded-outcomes .flight-status-summary-table {
+  margin: 0.75rem 0 1.6rem;
+  max-width: 900px;
+}
+
+#distinguish-recorded-outcomes .flight-status-summary-table table {
+  font-size: 0.88rem;
+  margin: 0;
+  min-width: 0;
+}
+
+#distinguish-recorded-outcomes .flight-status-summary-table th,
+#distinguish-recorded-outcomes .flight-status-summary-table td {
+  padding: 0.62rem 0.8rem;
+}
+
+#create-the-analysis-dataset > .cell .cell-output-stdout {
+  display: none;
+}
+
+#data-quality-preparation .cell-output-stdout pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+#data-quality-preparation .cell-output-display:has(table) {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: none;
+  margin: 0.65rem 0 0.9rem;
+  padding: 0.25rem 0.65rem 0.45rem;
+}
+
+#data-quality-preparation .cell-output-display:has(table) table {
+  box-shadow: none;
+  font-size: 0.84rem;
+  margin-bottom: 0.25rem;
+}
+
+#data-quality-preparation > section > .cell + p {
+  border-left: 2px solid var(--teal-light);
+  color: var(--slate);
+  margin: 0.9rem 0 2rem;
+  max-width: 84ch;
+  padding-left: 1rem;
+}
+
+#data-quality-preparation > section > .cell + p strong {
+  color: var(--navy);
+}
+
+#validate-the-prepared-data {
+  border-top: 1px solid var(--border-strong);
+  margin-top: 2.8rem;
+  padding-top: 0.15rem;
+}
+
+#validate-the-prepared-data > .cell {
+  border-left: 2px solid var(--border-strong);
+  padding-left: 0.8rem;
+}
+
+#validate-the-prepared-data > p + p {
+  border-left-color: var(--sky);
+  font-size: 0.94rem;
+}
+
+#validate-the-prepared-data > ul {
+  background: #f8fbfc;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--slate);
+  font-size: 0.92rem;
+  margin: 0.4rem 0 2rem;
+  padding: 0.85rem 1.1rem 0.85rem 2rem;
+}
+
+/* ===== Figures, tables, callouts, and code ===== */
+
+.cell {
+  margin: 1.25rem 0 2.25rem;
+}
+
+/* Charts and tables are the evidence layer; keep them visually ahead of code. */
+.cell:has(.cell-output-display) {
+  margin-bottom: 1.25rem;
+}
+
+.cell:has(.cell-output-display) > .sourceCode {
+  margin-bottom: 0.8rem;
+}
+
+.sourceCode {
+  border: 0;
+  margin-top: 0.25rem;
+}
+
+.sourceCode pre {
+  box-shadow: none;
+}
+
+.cell:has(.cell-output-stdout) .cell-output-stdout {
+  border-left: 2px solid var(--border-strong);
+  color: var(--slate);
+  font-size: 0.84rem;
+  margin: 0.9rem 0 1.1rem;
+  padding-left: 0.85rem;
+}
+
+.cell-output-stdout pre,
+.cell-output-stderr pre {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  font-size: inherit;
+  padding: 0;
+}
+
+.cell-output-stderr {
+  color: var(--amber);
+}
+
+.cell-output-display,
+.cell-output-stdout,
+.cell-output-stderr {
+  margin-top: 1rem;
+}
+
+.cell-output-display img {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 7px 22px rgba(16, 40, 63, 0.07);
+  display: block;
+  height: auto;
+  max-width: 100%;
+  padding: 0.55rem;
+}
+
+.cell-output-display:has(img) {
+  margin: 1.35rem 0 0.4rem;
+}
+
+/* The paragraph immediately after a chart carries the analytical reading. */
+.cell-output-display + p,
+.cell-output-display + .cell-output-stdout + p {
+  border-left: 2px solid var(--teal-light);
+  color: var(--slate);
+  margin: 1rem 0 2rem;
+  max-width: 82ch;
+  padding-left: 1rem;
+}
+
+.cell-output-display + p strong,
+.cell-output-display + .cell-output-stdout + p strong {
+  color: var(--navy);
+}
+
+figcaption, .figure-caption {
+  color: var(--slate);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  margin: 0.7rem auto 0;
+  max-width: 92%;
+}
+
+.table-responsive,
+.cell-output-display:has(table) {
+  overflow-x: auto;
+}
+
+.cell-output-display:has(table) {
+  margin: 1rem 0 1.8rem;
+}
+
+table {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-collapse: separate;
+  border-radius: 10px;
+  border-spacing: 0;
+  box-shadow: 0 5px 18px rgba(16, 40, 63, 0.045);
+  font-size: 0.9rem;
+  margin: 0.5rem 0 1rem;
+  min-width: 620px;
+  overflow: hidden;
+  width: 100%;
+}
+
+table thead th {
+  background: var(--navy);
+  color: var(--white);
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+table th, table td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.7rem 0.8rem;
+  vertical-align: top;
+}
+
+table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+table tbody tr:nth-child(even) {
+  background: #f8fbfc;
+}
+
+table tbody tr:hover {
+  background: var(--teal-light);
+}
+
+caption {
+  caption-side: bottom;
+  color: var(--slate);
+  font-size: 0.83rem;
+  line-height: 1.45;
+  padding: 0.7rem 0 0;
+  text-align: left;
+}
+
+pre {
+  background: #edf3f5;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  color: var(--charcoal);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  padding: 1rem 1.1rem;
+}
+
+.cell > details {
+  background: rgba(232, 241, 243, 0.42);
+  border: 1px solid transparent;
+  border-radius: 7px;
+  margin: 0.65rem 0 0.8rem;
+  padding: 0.1rem 0.75rem;
+}
+
+.cell > details[open] {
+  border-color: var(--border);
+}
+
+.cell > details > summary {
+  color: var(--slate);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  padding: 0.45rem 0;
+  text-transform: uppercase;
+}
+
+.cell > details > summary:hover {
+  color: var(--teal);
+}
+
+code {
+  background: #e8f1f3;
+  border-radius: 4px;
+  color: var(--navy);
+  font-family: Consolas, "Cascadia Code", monospace;
+  font-size: 0.88em;
+  padding: 0.12em 0.3em;
+}
+
+pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+blockquote {
+  border-left: 4px solid var(--teal);
+  color: var(--slate);
+  margin: 1.5rem 0;
+  padding: 0.25rem 1.25rem;
+}
+
+.callout {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+/* Give short, bold-led interpretations a consistent reading cue. */
+p:has(> strong:first-child) {
+  color: var(--slate);
+}
+
+p:has(> strong:first-child) strong {
+  color: var(--navy);
+}
+
+.portfolio-hero .hero-author p {
+  color: #c9dfe8;
+}
+
+.portfolio-hero .hero-author p strong {
+  color: #ffffff;
+}
+
+@media (max-width: 1000px) {
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  #quarto-content {
+    padding-top: 0;
+  }
+
+  .portfolio-hero {
+    border-radius: 13px;
+    margin-top: 0.5rem;
+    padding: 2.6rem 1.6rem 2.5rem;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.11em;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .kpi-grid {
+    gap: 0.75rem;
+    margin-bottom: 2.8rem;
+  }
+
+  .kpi-card {
+    min-height: 100px;
+    padding: 1.1rem 1rem;
+  }
+
+  h1 {
+    margin-top: 3.2rem;
+  }
+
+  h2 {
+    margin-top: 2.5rem;
+  }
+
+  #key-findings > ul,
+  #limitations > ul {
+    grid-template-columns: 1fr;
+  }
+
+  #key-findings > ul > li:first-child,
+  #limitations > ul > li:last-child {
+    grid-column: auto;
+  }
+
+  #analytical-takeaways,
+  #conclusion {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+  }
+
+  #project-question > p {
+    font-size: 1.02rem;
+    padding: 1.1rem 1.15rem;
+  }
+
+  table {
+    font-size: 0.82rem;
+    min-width: 560px;
+  }
+}
+
+@media (max-width: 520px) {
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kpi-card {
+    min-height: auto;
+  }
+
+  .portfolio-hero::after {
+    right: -110px;
+  }
+}
+/* Compact Airline Performance tables only; retain the portfolio palette. */
+.airline-compact-table table {
+  min-width: 0;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 0.84rem;
+}
+.airline-compact-table table th,
+.airline-compact-table table td {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  padding: 0.55rem 0.45rem;
+}
+.airline-compact-table table th:first-child,
+.airline-compact-table table td:first-child {
+  width: 30%;
+}
+
+/* Airport supporting evidence only; keep the main chart ahead of tables. */
+#airport-performance .airport-supporting-tables {
+  border-top: 1px solid var(--border-strong);
+  margin-top: 2rem;
+  padding-top: 0.5rem;
+}
+#airport-performance .airport-supporting-tables h3 {
+  color: var(--navy);
+  font-size: 1.05rem;
+  margin-top: 1.6rem;
+}
+#airport-performance .airport-supporting-tables table {
+  min-width: 0;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 0.84rem;
+}
+#airport-performance .airport-supporting-tables th,
+#airport-performance .airport-supporting-tables td {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  padding: 0.55rem 0.45rem;
+}
+
+/* Balance coverage columns instead of Pandoc's narrow airport-code column. */
+#airport-performance #airport-coverage-and-valid-samples col {
+  width: 20% !important;
+}
+#airport-performance #airport-coverage-and-valid-samples col:first-child {
+  width: 12% !important;
+}
+#airport-performance #airport-coverage-and-valid-samples col:nth-child(2) {
+  width: 28% !important;
+}
+
+/* Temporal Patterns only: supporting tables stay secondary to the charts. */
+#temporal-patterns .temporal-summary-tables {
+  margin: 1rem 0 2rem;
+}
+#temporal-patterns .temporal-summary-tables > details {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+#temporal-patterns .temporal-summary-tables > details > summary {
+  color: var(--teal);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+#temporal-patterns .temporal-summary-tables table {
+  min-width: 0;
+  table-layout: fixed;
+  width: 100%;
+  font-size: 0.84rem;
+}
+#temporal-patterns .temporal-summary-tables th,
+#temporal-patterns .temporal-summary-tables td {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  padding: 0.55rem 0.4rem;
+}
+#temporal-patterns > section > h3 {
+  color: var(--navy);
+  font-size: 1.15rem;
+  margin-top: 2rem;
+}
+
+/* Routes & Destinations only: compact route evidence and origin context. */
+#routes-destinations .route-comparison-tables table {
+  min-width: 0;
+  table-layout: fixed;
+  width: 100%;
+  font-size: 0.84rem;
+}
+#routes-destinations .route-comparison-tables th,
+#routes-destinations .route-comparison-tables td {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  padding: 0.55rem 0.4rem;
+}
+#routes-destinations .route-comparison-tables > details {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin: 0.8rem 0 1.6rem;
+  padding: 0.75rem;
+}
+#routes-destinations .route-comparison-tables > details > summary {
+  color: var(--teal);
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+#routes-destinations .route-origin-comparison {
+  border-left: 3px solid var(--teal);
+  background: var(--white);
+  margin: 1.5rem 0;
+  padding: 0.8rem 1rem;
+}
+#routes-destinations .route-origin-comparison p {
+  margin: 0;
+}
+#routes-destinations > section > h3 {
+  color: var(--navy);
+  font-size: 1.15rem;
+  margin-top: 2rem;
+}
